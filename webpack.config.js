@@ -14,17 +14,17 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.js?/,
+        test: /\.(js|jsx)$/,
         include: src,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/react', '@babel/env']
-          }
         }
       },
     ],
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
   },
   output: {
     path: dist + '/app',
