@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Swtich from './Switch';
 
 export default function App() {
   const [counter, setCounter] = useState(0);
@@ -24,6 +25,7 @@ export default function App() {
       {counter}
       <button onClick={decrement}>Decrement</button>
       <label>Hey Guys!</label>
+      <Swtich/>
     </div>
   );
 }
