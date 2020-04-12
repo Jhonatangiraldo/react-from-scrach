@@ -1,17 +1,17 @@
 {
-  "name": "example11",
-  "version": "1.0.0",
+  "name": "ReactFromScratch",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "copyIndex": "cp src/app/index.html dist/index.html",
     "build": "webpack -d",
     "start": "webpack-dev-server --content-base src/ --inline --hot --history-api-fallback",
+    "live": "npm run build && npm run start",
     "build:prod": "webpack -p && npm run copyIndex"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jhonatan Giraldo",
   "license": "ISC",
   "dependencies": {
     "react": "^16.13.1",
@@ -22,7 +22,6 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
-    "babel-preset-stage-2": "^6.24.1",
     "html-webpack-plugin": "^4.2.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
