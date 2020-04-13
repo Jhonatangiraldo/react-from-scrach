@@ -1,13 +1,14 @@
 const path = require('path');
-const dist = path.resolve(__dirname, 'dist');
-const src = path.resolve(__dirname, 'src');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
+const dist = path.resolve(__dirname, 'dist');
+const src = path.resolve(__dirname, 'src');
+
 const hwpConfig = new HTMLWebpackPlugin({
-  template: src + '/app/index.html', 
+  template: src + '/app/index.html',
   filename: 'index.html',
-  inject: 'body'
-})
+  inject: 'body',
+});
 
 const config = {
   entry: src + '/app/index.js',
@@ -19,7 +20,7 @@ const config = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-        }
+        },
       },
       {
         test: /\.s[ac]ss$/i,
@@ -30,19 +31,21 @@ const config = {
           'css-loader',
           // Compiles sass to CSS
           'sass-loader',
-        ]
-      }
+        ],
+      },
+      { loader: 'url-loader', test: /\.gif$/ },
+      { loader: 'file-loader', test: /\.(ttf|eot|svg)$/ },
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
   output: {
     path: dist + '/app',
     filename: 'bundle.js',
     publicPath: '/app/',
   },
-  plugins: [hwpConfig]
+  plugins: [hwpConfig],
 };
 
 module.exports = config;
