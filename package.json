@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
+    "test:debug": "node --inspect --inspect-brk node_modules/.bin/jest --watch",
+    "coverage": "jest --coverage --watch",
     "build": "webpack -d",
     "start": "webpack-dev-server --content-base src/ --inline --hot --history-api-fallback",
     "live": "npm run build && npm run start",
